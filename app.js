@@ -16,26 +16,53 @@ const playTo = document.querySelector('#playTo')
 let winningScore = 3;
 let isGameOver = false;
 
-function updateScores(player, opponent) {
-    if (!isGameOver) {
-        player.score += 1;
-        if (player.score === winningScore) {
+function checkScores() {
+        //if p1 score is winning score AND opp score is not winning score - 1, game is over
+        if (winningScoreReached() && winBy2()) {
             isGameOver = true
-            player.display.classList.add('has-text-success')
-            opponent.display.classList.add('has-text-danger')
-            player.button.disabled = true
-            opponent.button.disabled = true
+            p1.button.disabled = true
+            p2.button.disabled = true
+            if (p1.score > p2.score) {
+                p1.display.classList.add('has-text-success')
+                p2.display.classList.add('has-text-danger')
+            } else if (p2.score > p1.score) {
+                p2.display.classList.add('has-text-success')
+                p1.display.classList.add('has-text-danger')
+            }
         }
-        player.display.textContent = player.score
+}
+
+function winningScoreReached() {
+    //check if p1 score >= winning score OR p2 score >= winning score, return true
+    if (p1.score >= winningScore || p2.score >= winningScore) {
+        console.log('test true')
+        return true 
+    } else {
+        console.log('test false')
+        return false
+    }
+}
+
+//get the diff between scores and make sure diff is by 2
+function winBy2() {
+    let diff = p1.score - p2.score
+    if (diff > 1 || diff < -1) {
+        return true
+    } else {
+        return false
     }
 }
 
 p1.button.addEventListener('click', function() {
-    updateScores(p1, p2)
+    p1.score++
+    p1.display.textContent = p1.score
+    checkScores()
 })
 
 p2.button.addEventListener('click', function() {
-    updateScores(p2, p1)
+    p2.score++
+    p2.display.textContent = p2.score
+    checkScores()
 })
 
 playTo.addEventListener('change', function() {
