@@ -12,6 +12,7 @@ const p2 = {
 
 const resetButton = document.querySelector('#reset')
 const playTo = document.querySelector('#playTo')
+const playerWon = document.querySelector('#playerWon')
 
 let winningScore = 3;
 let isGameOver = false;
@@ -25,9 +26,11 @@ function checkScores() {
             if (p1.score > p2.score) {
                 p1.display.classList.add('has-text-success')
                 p2.display.classList.add('has-text-danger')
+                playerWon.textContent = 'Player 1 won!'
             } else if (p2.score > p1.score) {
                 p2.display.classList.add('has-text-success')
                 p1.display.classList.add('has-text-danger')
+                playerWon.textContent = 'Player 2 won!'
             }
         }
 }
