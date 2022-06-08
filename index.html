@@ -4,36 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Score Keeper</title>
+    <title>Mahjong Score Keeper</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+    <link rel="stylesheet" href="app.css">
     </style>
   </head>
   <body>
     <section class="section">
       <div class="container">
         <div class="columns">
-          <div class="column is-half is-offset-one-quarter">
-            <div class="card">
+          <div class="column is-half is-offset-one-quarter" id="gameBox">
+            <div class="card is-justify-content-space-evenly">
               <div class="card-image">
                 <figure class="image is-5by3">
                   <img
-                    src="https://media.istockphoto.com/photos/table-tennis-ball-and-bat-picture-id502189498?k=20&m=502189498&s=612x612&w=0&h=rEzCEKuTFlA-LgoxSfCFV2OD5UdIDNn-Egsj2fMbUkE="
+                    src="https://www.gannett-cdn.com/presto/2021/01/06/USAT/59ae8ff3-e546-4d9a-b7bd-3e93ac964ade-GettyImages-475539562.jpg?crop=2141,1204,x0,y0&width=2141&height=1204&format=pjpg&auto=webp"
                     alt=""
+                    
                   />
                 </figure>
               </div>
-              <header class="card-header has-text-centered">
-                <p class="card-header-title has-text-centered">Ping Pong Score Keeper</p>
-                <button class="card-header-icon has-text-centered" aria-label="more options">
+              <header class="card-header has-text-centered" id="cardHeader">
+                <p class="card-header-title is-centered is-size-3">Mahjong Score Keeper</p>
+                <!-- <button class="card-header-icon has-text-centered" aria-label="more options">
                   <span class="icon has-text-centered">
                     <i class="fas fa-angle-down" aria-hidden="true"></i>
                   </span>
-                </button>
+                </button> -->
               </header>
-              <div class="card-content has-text-centered">
+              <div class="card-content has-text-centered" id="cardContent">
                 <div class="content">
                   <h1 class="title is-1 has-text-centered">
                     <span id="p1Display">0</span> to
@@ -63,14 +65,14 @@
               <footer class="card-footer">
                 <button
                   id="p1Button"
-                  class="is-primary button card-footer-item is-large"
+                  class="is-primary button card-footer-item is-large is-responsive"
                 >
                   +1 Player One
                 </button>
-                <button id="p2Button" class="is-info button card-footer-item is-large">
+                <button id="p2Button" class="is-info button card-footer-item is-large is-responsive">
                   +1 Player Two
                 </button>
-                <button id="reset" class="is-danger button card-footer-item is-large">
+                <button id="reset" class="is-danger button card-footer-item is-large is-responsive">
                   Reset
                 </button>
               </footer>

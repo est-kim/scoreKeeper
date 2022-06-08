@@ -1,0 +1,19 @@
+html {
+    background-color: #C1E1C1;
+}
+
+#gameBox {
+    border: none;
+    padding: 0;
+    box-shadow: 0 1rem 1.4rem 0 #93C572;
+}
+
+#cardHeader {
+    background-color: #FFFFF0;
+    padding-bottom: 0px;
+}
+
+#cardContent {
+    background-color: #FFFFF0;
+    padding-top: 0px;
+}
