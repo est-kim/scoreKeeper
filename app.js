@@ -23,17 +23,26 @@ function checkScores() {
             isGameOver = true
             p1.button.disabled = true
             p2.button.disabled = true
+            playerWon.hidden = false
             if (p1.score > p2.score) {
                 p1.display.classList.add('has-text-success')
                 p2.display.classList.add('has-text-danger')
-                playerWon.textContent = 'Player 1 won!'
+                playerWon.innerText = 'Player 1 won!'
             } else if (p2.score > p1.score) {
                 p2.display.classList.add('has-text-success')
                 p1.display.classList.add('has-text-danger')
-                playerWon.textContent = 'Player 2 won!'
+                playerWon.innerText = 'Player 2 won!'
             }
         }
 }
+
+// function gameWinner() {
+//     if (p1.display.has('has-text-success')) {
+//         playerWon.innerText = 'Player 1 won!'
+//     } else if (p2.display.has('has-text-success')) {
+//         playerWon.innerText = 'Player 2 won!'
+//     }
+// }
 
 function winningScoreReached() {
     //check if p1 score >= winning score OR p2 score >= winning score, return true
@@ -77,10 +86,12 @@ resetButton.addEventListener('click', reset) //passing it here
 
 function reset() {
     isGameOver = false
+    playerWon.hidden = true
     for (let p of [p1, p2]) {
         p.score = 0
         p.display.textContent = 0
         p.display.classList.remove('has-text-success', 'has-text-danger')
         p.button.disabled = false
     }
+
 }

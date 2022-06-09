@@ -17,3 +17,11 @@ html {
     background-color: #FFFFF0;
     padding-top: 0px;
 }
+
+#subtitle {
+    padding-top: 1rem;
+}
+
+#playerWon {
+    padding-bottom: 1rem;
+}
